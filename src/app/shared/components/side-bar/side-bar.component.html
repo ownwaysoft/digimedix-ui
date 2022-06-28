@@ -1,7 +1,33 @@
-<ul>
+<!-- <ul>
     <li><a routerLink="/">Dashboard</a></li>
     <li><a routerLink="/activity">Activity</a></li>
     <li><a routerLink="/notification">Notification</a></li>
     <li><a routerLink="/share">Share</a></li>
     <li><a routerLink="/settings">Settings</a></li>
-</ul>
+</ul> -->
+
+<div class="sidebar-list">
+  <ul>
+    <li routerLink="/">
+      <button mat-button>
+        <mat-icon> file_copy</mat-icon>
+      </button>
+    </li>
+    <li routerLink="/activity">
+      <button mat-button>
+        <mat-icon>send</mat-icon>
+      </button>
+    </li>
+    <li routerLink="/notification">
+      <button mat-button>
+        <mat-icon>timeline</mat-icon>
+      </button>
+    </li>
+    <li routerLink="/share">
+      <button mat-button>
+        <mat-icon>access_time</mat-icon>
+      </button>
+    </li>
+  </ul>
+
+</div>

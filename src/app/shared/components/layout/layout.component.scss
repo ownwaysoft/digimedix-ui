@@ -1,8 +1,16 @@
 .example-container {
-    position: absolute;
-    top: 40px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #eee;
-  }
+  position: absolute;
+  top: 40px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #eee;
+}
+
+.side-navbar {
+  background: #1B54EB;
+}
+
+.main-wrapper {
+  background-color: rgb(255, 255, 255);
+}

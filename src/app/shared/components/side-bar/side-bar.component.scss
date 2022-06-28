@@ -1,0 +1,18 @@
+.sidebar-list {
+  ul {
+    padding: 0;
+
+    li {
+      list-style: none;
+
+      button {
+        padding: 11px 0px;
+
+        mat-icon {
+          color: #fff;
+        }
+      }
+
+    }
+  }
+}

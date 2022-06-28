@@ -1,0 +1,88 @@
+.notification-wrapper {
+  padding: 10px;
+
+  h2 {
+    font-size: 24px;
+    color: rgb(27, 84, 235);
+    font-weight: bold;
+    margin-left: 15px;
+
+    mat-icon {
+      position: relative;
+      top: 10px;
+    }
+  }
+
+  .sort-wrapper {
+    background-color: rgb(250, 250, 252);
+    border-top: 1px solid rgb(238, 238, 240);
+    border-bottom: 1px solid rgb(238, 238, 240);
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .search-bar {
+      background: #f3f5fb;
+      border: 1px solid #bbc5df;
+      border-radius: 17px;
+      width: 100%;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
+      padding: 0 15px;
+      height: 32px;
+      width: 440px;
+      float: right;
+
+      input {
+        border: none;
+        outline: none;
+      }
+
+      mat-icon {
+        color: #1b54eb;
+      }
+    }
+  }
+
+  .notification-content {
+    margin: 25px 15px 15px 0;
+
+
+    h6 {
+      color: #aaa;
+      margin: 0;
+      font-size: 16px;
+      padding: 0 10px 8px 0;
+
+      mat-icon {
+        position: relative;
+        top: 8px;
+      }
+    }
+
+    p {
+      margin: 5px 0;
+      color: rgb(85, 85, 85);
+      font-size: 16px;
+
+      a {
+        color: rgb(27, 65, 207);
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
+    .notification-btn {
+      position: relative;
+      top: 30px;
+    }
+  }
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}

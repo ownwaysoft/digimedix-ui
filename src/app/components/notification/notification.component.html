@@ -1,1 +1,54 @@
-<p>notification works!</p>
+<div class="notification-wrapper">
+  <h2>Notifications
+    <mat-icon>add_circle</mat-icon>
+  </h2>
+
+  <div class="row sort-wrapper">
+    <div class="col-xs-5">
+      <mat-form-field>
+        <!-- <mat-label>Sort</mat-label> -->
+        <select matNativeControl required value="sort">
+          <option value="sort">Sort</option>
+          <option value="timeline">Timeline</option>
+          <option value="path">Path</option>
+          <option value="name">Name</option>
+        </select>
+      </mat-form-field>
+    </div>
+    <div class="col-xs-7">
+      <form>
+        <div class="search-bar">
+          <input type="text" placeholder="Search Notifications">
+          <mat-icon>search</mat-icon>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="row notification-content">
+    <div class="col-xs-10">
+      <h6>Added: June 25, 2022 <b>folder »</b> test </h6>
+      <p>
+        <b>Do this:</b> Send notification when items have been uploaded, downloaded or deleted
+      </p>
+      <p>
+        <b>For:</b> Anyone (Users + Shared Folder Recipients)
+      </p>
+      <p>
+        <b>Send to:</b> vijay@primeenterprise.net
+      </p>
+      <p>
+        <b>Path:</b> <a> Home</a> <span> » </span> <a> test</a>
+      </p>
+    </div>
+
+    <div class="col-xs-2 text-right notification-btn">
+      <button mat-button>
+        <mat-icon> edit</mat-icon>
+      </button>
+      <button mat-button>
+        <mat-icon> delete</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
