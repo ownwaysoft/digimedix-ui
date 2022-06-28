@@ -20,7 +20,7 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
-        path: 'dashboard', component: DashboardComponent, data: { title: 'Dashboard' }
+        path: '', loadChildren: () => import('../app/components/dashboard/dashboard.module').then(m => m.DashboardModule), data: { title: 'Dashboard' }
       },
       {
         path: 'activity', loadChildren: () => import('../app/components/activity/activity.module').then(m => m.ActivityModule), data: { title: 'Activity' }

@@ -9,6 +9,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { SideBarComponent } from './shared/components/side-bar/side-bar.component';
 import { LayoutComponent } from './shared/components/layout/layout.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { MaterialModule } from './shared/modules/material.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
