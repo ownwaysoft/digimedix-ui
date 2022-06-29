@@ -1,5 +1,6 @@
 .send-wrapper {
   margin: 35px 0 30px;
+  padding-top: 40px;
   max-width: 860px;
   margin-left: auto;
   margin-right: auto;
@@ -7,10 +8,14 @@
   h2 {
     font-weight: bold;
     font-size: 22px;
+    margin-bottom: 15px;
 
     mat-icon {
-      font-size: 13px;
+      font-size: 11px;
       transform: rotate(-30deg);
+      position: relative;
+      right: -10px;
+      top: -4px;
     }
 
     color: rgb(27, 84, 235);
@@ -25,13 +30,14 @@
     color: #555;
 
     h5 {
-      font-size: 1.4em;
+      font-size: 22px;
       color: #b2b2b2;
     }
 
     p {
       margin-bottom: 5px;
       color: #b2b2b2;
+      font-size: 16px;
     }
 
     .file-btn {
@@ -44,66 +50,38 @@
     .browse-btn {
       background-color: #1B54EB;
       color: #fff;
+      font-weight: normal;
+      margin-top: 5px;
     }
   }
-
-  .send-radio {
-    color: rgb(85, 85, 85);
-    font-size: 16px;
-
-    a {
-      color: rgb(27, 65, 207);
-    }
-
-    .mat-checkbox {
-      font-weight: normal;
-    }
-
-    .mat-radio-label {
-      font-weight: normal;
-    }
-
-    .mat-checkbox-label {
-      font-weight: normal;
-    }
-  }
-
 
   .share-form {
-    input {
-      transition: border-color .2s cubic-bezier(0, 0, .2, 1) 0ms;
-      border: 1px solid #bbc5df;
-      border-radius: 6px;
-      height: 51px;
-      margin-right: 5px;
-      padding: 3px 8px;
-      width: 100%;
+    margin-bottom: 20px;
+
+    p {
+      padding: 2px 3px;
+      font-size: 11px;
+      font-weight: 400;
+      margin-bottom: -4px;
+    }
+
+    .add-cc {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      button {
+        color: rgb(27, 65, 207);
+        padding: 0;
+      }
     }
 
     mat-form-field {
       width: 100%;
       padding: 0;
 
-      .add-cc {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        button {
-          color: rgb(27, 65, 207);
-          padding: 0;
-        }
-      }
-
       .mat-form-field-wrapper {
         padding-bottom: 0;
-      }
-
-      p {
-        padding: 2px 3px;
-        font-size: 11px;
-        font-weight: 400;
-        margin-bottom: 0;
       }
 
       mat-label {
@@ -111,18 +89,7 @@
         font-size: 11px;
         font-weight: 400;
       }
-
-      input {
-        transition: border-color .2s cubic-bezier(0, 0, .2, 1) 0ms;
-        border: 1px solid #bbc5df;
-        border-radius: 6px;
-        height: 51px;
-        margin-right: 5px;
-        padding: 3px 8px;
-      }
     }
-
-
   }
 
   .custome-message {
@@ -160,50 +127,106 @@
 
       input {
         transition: border-color .2s cubic-bezier(0, 0, .2, 1) 0ms;
-        // border: 1px solid #bbc5df;
         border-radius: 6px;
         height: 51px;
         margin-right: 5px;
-        // padding: 3px 8px;
       }
     }
   }
 
-  .radio-group {
-    margin: 35px 0 30px;
+  .recipients {
+    margin: 35px 0 35px 35px;
 
-    h4 {
-      font-size: 20px;
-      color: rgb(85, 85, 85);
+    div {
+      margin-bottom: 16px;
+      font-size: 16px;
     }
 
-    .send-radio {
-      .mat-radio-label-content {
-        font-weight: normal;
-      }
+    mat-radio-group {
+      margin: 35px 0 30px;
 
-      .mat-radio-label {
-        font-weight: normal;
-
+      h4 {
+        font-size: 20px;
+        color: rgb(85, 85, 85);
+        margin-bottom: 30px;
       }
     }
   }
 
+  .mat-accordion {
+    .mat-expansion-panel {
+      color: rgb(27, 84, 235);
+      box-shadow: none;
+    }
 
+    mat-panel-title {
+      margin-bottom: 20px;
+      color: rgb(27, 84, 235);
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+
+      mat-icon {
+        color: rgb(27, 84, 235);
+        margin-right: 12px;
+      }
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+
+      h6 {
+        font-size: 16px;
+        color: #555;
+        display: flex;
+        align-items: center;
+
+        mat-icon {
+          color: #555;
+          margin-right: 10px;
+        }
+      }
+
+      mat-form-field {
+        width: 100%;
+      }
+    }
+  }
+
+  mat-radio-button {
+    font-size: 16px;
+  }
+
+  .mat-checkbox {
+    font-size: 16px;
+  }
 
   .send-btn {
     background-color: #1B54EB;
     color: #fff;
   }
 
+  a {
+    text-decoration: underline;
+    color: rgb(27, 65, 207);
+  }
 
+  // ---------share--------
 
-
-
-
-
+  .manage-btn {
+    background-color: #1B54EB;
+    color: #fff;
+    font-weight: normal;
+    margin-top: 5px;
+  }
 }
 
 ::ng-deep .mat-form-field-underline {
   display: none;
 }
+
+// ::ng-deep .mat-form-field-outline {
+//   display: none;
+// }
