@@ -22,9 +22,10 @@
     border-top: 1px solid rgb(238, 238, 240);
     border-bottom: 1px solid rgb(238, 238, 240);
     margin: 15px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding: 5px 0 10px 0;
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-between;
 
     .search-bar {
       background: #f3f5fb;
@@ -50,35 +51,42 @@
         color: #1b54eb;
       }
     }
-  }
 
-  .home-check {
-    img {
-      height: 20px;
-      object-fit: contain;
-      margin-left: 5px;
+    .home-check {
+      padding-left: 16px;
+
+      img {
+        height: 20px;
+        object-fit: contain;
+        margin-left: 5px;
+      }
     }
   }
 
-  .upload-wrapper {
-    div {
+
+
+  .files-wrapper {
+    margin: 15px 0;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(238, 238, 240);
+    border-top: 1px solid #fff;
+    padding: 5px 0;
+
+    .files-detail {
       display: flex;
       align-items: center;
 
-      mat-checkbox {
-        margin: 0 5px 0 16px;
-      }
-
       img {
-        height: 50px;
+        height: 40px;
         object-fit: contain;
-        margin-left: 5px;
-        margin-right: 10px;
+        margin-left: 15px;
+        margin-right: 20px;
       }
 
       h6 {
         color: rgb(85, 85, 85);
         font-size: 16px;
+        margin-bottom: 0;
       }
 
       p {
@@ -87,8 +95,57 @@
       }
     }
 
+    .files-btn {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
 
+      .share-icon {
+        margin-right: 10px;
+        color: #000;
+        font-size: 15px;
+      }
+
+      .arrow-icon {
+        color: #000;
+      }
+
+      .label {
+        border-radius: 4px;
+        margin-right: 10px;
+        line-height: 27px;
+        font-size: 12px;
+      }
+
+      .shared {
+        background-color: #1b54eb;
+        color: #fff;
+      }
+
+      .receive {
+        background-color: #ee7058;
+        color: #fff;
+      }
+
+      .disabled {
+        opacity: 0.5;
+      }
+    }
   }
+
+
+  .pagination-wrapper {
+    margin: 0 0 0 10px;
+
+    .display-rows {
+      color: rgb(178, 178, 178);
+      margin-top: 25px;
+      text-align: right;
+      padding-right: 20px;
+      margin-bottom: 30px;
+    }
+  }
+
 
 
 }

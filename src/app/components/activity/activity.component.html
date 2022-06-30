@@ -1,1 +1,125 @@
-<p>activity works!</p>
+<mat-tab-group animationDuration="0ms">
+  <mat-tab label="Share Activity">
+    <div class="row sort-wrapper">
+      <div class="col-xs-5">
+        <div class="activity-select">
+          <span>Sort By</span>
+          <mat-form-field>
+            <mat-select value="sort">
+              <mat-option value="sort">Sort</mat-option>
+              <mat-option value="timeline">Timeline</mat-option>
+              <mat-option value="path">Path</mat-option>
+              <mat-option value="name">Name</mat-option>
+            </mat-select>
+          </mat-form-field>
+          &nbsp;
+          <span>and show</span>
+          <mat-form-field class="show-select">
+            <mat-select value="sort">
+              <mat-option value="sort">all shares</mat-option>
+              <mat-option value="timeline">All Shares</mat-option>
+              <mat-option value="path">Activity Shares</mat-option>
+              <mat-option value="name">Shares Created By Me</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="col-xs-7">
+
+        <form>
+          <div class="search-bar">
+            <input type="text" placeholder="Search History">
+            <mat-icon>search</mat-icon>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="activity-history">
+      <div class="timeline">
+        <h6>This Week</h6>
+      </div>
+      <div>
+        <div class="row activity-share-item">
+          <div class="col-xs-8">
+            <button class="label shared disabled" mat-button disabled>shared</button>
+            <span class="summary">shared a folder named <strong> Vijay</strong> </span>
+          </div>
+          <div class="col-xs-4 text-right">
+            <h6 class="time">June 25, 2022 - 03:24 am <mat-icon>arrow_drop_down</mat-icon>
+            </h6>
+          </div>
+        </div>
+        <div class="row activity-share-item">
+          <div class="col-xs-8">
+            <button class="label shared disabled" mat-button disabled>shared</button>
+            <span class="summary">shared a folder named <strong>Vijay</strong> </span>
+          </div>
+          <div class="col-xs-4 text-right">
+            <h6 class="time">June 25, 2022 - 03:07 am <mat-icon>arrow_drop_down</mat-icon>
+            </h6>
+          </div>
+        </div>
+        <div class="row activity-share-item">
+          <div class="col-xs-8">
+            <button class="label receive" mat-button disabled>receive</button>
+            <span class="summary">set up a receive folder named <strong> test</strong> </span>
+          </div>
+          <div class="col-xs-4 text-right">
+            <h6 class="time">June 25, 2022 - 02:35 am <mat-icon>arrow_drop_down</mat-icon>
+            </h6>
+          </div>
+        </div>
+        <div class="row activity-share-item">
+          <div class="col-xs-8">
+            <button class="label receive disabled" mat-button disabled>receive</button>
+            <span class="summary">set up a receive folder named <strong> vijay</strong> </span>
+          </div>
+          <div class="col-xs-4 text-right">
+            <h6 class="time">June 23, 2022 - 01:16 am <mat-icon>arrow_drop_down</mat-icon>
+            </h6>
+          </div>
+        </div>
+        <div class="row activity-share-item">
+          <div class="col-xs-8">
+            <button class="label shared disabled" mat-button disabled>shared</button>
+            <span class="summary">shared a folder named <strong> vijay</strong> </span>
+          </div>
+          <div class="col-xs-4 text-right">
+            <h6 class="time">June 23, 2022 - 01:13 am <mat-icon>arrow_drop_down</mat-icon>
+            </h6>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row pagination-wrapper">
+        <div class="col-xs-4">
+          <mat-form-field appearance="outline">
+            <mat-select value="25">
+              <mat-option value="10">10 / page</mat-option>
+              <mat-option value="25">25 / page</mat-option>
+              <mat-option value="50">50 / page</mat-option>
+              <mat-option value="100">100 / page</mat-option>
+              <mat-option value="200">200 / page</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-xs-8 text-right">
+          <!-- <section> -->
+          <div class="example-button-row pagination-btns">
+            <button mat-button>
+              <mat-icon>arrow_back_ios</mat-icon> PREVIOUS
+            </button>
+            <button mat-button>NEXT <mat-icon>arrow_forward_ios</mat-icon></button>
+          </div>
+          <p class="display-rows">Displaying rows 1 - 5</p>
+          <!-- </section> -->
+        </div>
+      </div>
+
+    </div>
+
+  </mat-tab>
+</mat-tab-group>
