@@ -1,0 +1,20 @@
+<h2 mat-dialog-title>Upload Files <mat-icon>close</mat-icon>
+</h2>
+
+<mat-dialog-content class="mat-typography">
+  <div class="choose-file">
+    <h5>Drag & Drop files or folders here</h5>
+    <p>- or -</p>
+    <section>
+      <div class="example--row">
+        <button class="file-btn" mat-stroked-button>Add Files</button>
+        <button class="file-btn" mat-stroked-button>Add Folder</button>
+      </div>
+    </section>
+
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button class="start-btn" mat-button [mat-dialog-close]="true" cdkFocusInitial>Start Upload</button>
+</mat-dialog-actions>

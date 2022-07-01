@@ -23,9 +23,17 @@
     border-bottom: 1px solid rgb(238, 238, 240);
     margin: 15px 0;
     padding: 5px 0 10px 0;
-    // display: flex;
-    // align-items: center;
-    // justify-content: space-between;
+
+    .sort-filter {
+      button {
+        width: 10%;
+        background-color: #d5d5d5;
+      }
+
+      mat-form-field {
+        // width: 58%;
+      }
+    }
 
     .search-bar {
       background: #f3f5fb;
@@ -58,12 +66,11 @@
       img {
         height: 20px;
         object-fit: contain;
-        margin-left: 5px;
+        margin: 0 5px 0px 0;
+        top: 5px;
       }
     }
   }
-
-
 
   .files-wrapper {
     margin: 15px 0;
@@ -95,6 +102,18 @@
       }
     }
 
+    .files-menu-btns {
+      font-size: 0;
+
+      button {
+        font-size: 0;
+
+        mat-icon {
+          font-size: 0;
+        }
+      }
+    }
+
     .files-btn {
       display: flex;
       align-items: center;
@@ -104,6 +123,8 @@
         margin-right: 10px;
         color: #000;
         font-size: 15px;
+        top: 10px;
+        position: relative;
       }
 
       .arrow-icon {
@@ -152,4 +173,17 @@
 
 ::ng-deep .mat-form-field-underline {
   display: none;
+}
+
+
+
+.mat-menu-item .mat-icon {
+  font-size: 16px;
+  color: #000;
+}
+
+.mat-menu-item {
+  color: #555;
+  height: 35px;
+  line-height: 35px;
 }

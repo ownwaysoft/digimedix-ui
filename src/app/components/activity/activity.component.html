@@ -4,7 +4,7 @@
       <div class="col-xs-5">
         <div class="activity-select">
           <span>Sort By</span>
-          <mat-form-field>
+          <mat-form-field class="sort-select">
             <mat-select value="sort">
               <mat-option value="sort">Sort</mat-option>
               <mat-option value="timeline">Timeline</mat-option>
@@ -26,7 +26,6 @@
       </div>
 
       <div class="col-xs-7">
-
         <form>
           <div class="search-bar">
             <input type="text" placeholder="Search History">
@@ -43,7 +42,7 @@
       <div>
         <div class="row activity-share-item">
           <div class="col-xs-8">
-            <button class="label shared disabled" mat-button disabled>shared</button>
+            <button class="label shared disabled" mat-button [matMenuTriggerFor]="disabledMenu">shared</button>
             <span class="summary">shared a folder named <strong> Vijay</strong> </span>
           </div>
           <div class="col-xs-4 text-right">
@@ -53,7 +52,7 @@
         </div>
         <div class="row activity-share-item">
           <div class="col-xs-8">
-            <button class="label shared disabled" mat-button disabled>shared</button>
+            <button class="label shared disabled" mat-button [matMenuTriggerFor]="disabledMenu">shared</button>
             <span class="summary">shared a folder named <strong>Vijay</strong> </span>
           </div>
           <div class="col-xs-4 text-right">
@@ -63,7 +62,7 @@
         </div>
         <div class="row activity-share-item">
           <div class="col-xs-8">
-            <button class="label receive" mat-button disabled>receive</button>
+            <button class="label receive" mat-button [matMenuTriggerFor]="activityMenu">receive</button>
             <span class="summary">set up a receive folder named <strong> test</strong> </span>
           </div>
           <div class="col-xs-4 text-right">
@@ -73,7 +72,7 @@
         </div>
         <div class="row activity-share-item">
           <div class="col-xs-8">
-            <button class="label receive disabled" mat-button disabled>receive</button>
+            <button class="label receive disabled" mat-button [matMenuTriggerFor]="disabledMenu">receive</button>
             <span class="summary">set up a receive folder named <strong> vijay</strong> </span>
           </div>
           <div class="col-xs-4 text-right">
@@ -83,7 +82,7 @@
         </div>
         <div class="row activity-share-item">
           <div class="col-xs-8">
-            <button class="label shared disabled" mat-button disabled>shared</button>
+            <button class="label shared disabled" mat-button [matMenuTriggerFor]="disabledMenu">shared</button>
             <span class="summary">shared a folder named <strong> vijay</strong> </span>
           </div>
           <div class="col-xs-4 text-right">
@@ -91,6 +90,8 @@
             </h6>
           </div>
         </div>
+
+
 
       </div>
 
@@ -118,6 +119,32 @@
           <!-- </section> -->
         </div>
       </div>
+
+      <mat-menu class="files-menu-btns" #disabledMenu="matMenu">
+
+        <button mat-menu-item>
+          <mat-icon>info</mat-icon> Details
+        </button>
+      </mat-menu>
+
+      <mat-menu class="files-menu-btns" #activityMenu="matMenu">
+
+        <button mat-menu-item>
+          <mat-icon>settings</mat-icon> Settings
+        </button>
+
+        <button mat-menu-item>
+          <mat-icon>email</mat-icon> Invite
+        </button>
+
+        <button mat-menu-item>
+          <mat-icon>search</mat-icon> Preview
+        </button>
+
+        <button mat-menu-item>
+          <mat-icon>not_interested</mat-icon> Stop Sharing
+        </button>
+      </mat-menu>
 
     </div>
 

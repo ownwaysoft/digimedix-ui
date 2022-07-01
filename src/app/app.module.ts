@@ -10,6 +10,7 @@ import { SideBarComponent } from './shared/components/side-bar/side-bar.componen
 import { LayoutComponent } from './shared/components/layout/layout.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { MaterialModule } from './shared/modules/material.module';
+import { ModalUploadComponent } from './components/modal-upload/modal-upload.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MaterialModule } from './shared/modules/material.module';
     FooterComponent,
     SideBarComponent,
     LayoutComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ModalUploadComponent
   ],
   imports: [
     BrowserModule,

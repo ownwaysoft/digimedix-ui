@@ -2,8 +2,21 @@
   color: #979797;
   font-size: 13px;
   text-align: center;
+  bottom: 0;
+  position: fixed;
+  z-index: 15;
+  background: #fff;
+  padding: 10px;
+  box-shadow: -5px 0 0 0 rgb(0 0 0 / 20%);
+  font-size: 11.5px;
+  text-align: center;
+  width: 100%;
+  margin: 0;
 
   a {
     cursor: pointer;
+    margin: 0 2px;
+    color: #979797;
+    text-decoration: underline;
   }
 }

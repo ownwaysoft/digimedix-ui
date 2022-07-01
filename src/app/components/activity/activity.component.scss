@@ -36,7 +36,7 @@
        font-size: 16px;
      }
 
-     mat-form-field {
+     .sort-select {
        width: 20%;
        font-size: 16px;
      }
@@ -122,9 +122,9 @@
          color: #000;
        }
      }
-
-
    }
+
+
  }
 
  .pagination-wrapper {
@@ -162,4 +162,19 @@
 
  ::ng-deep .mat-form-field-underline {
    //  display: none;
+ }
+
+ .mat-menu-panel {
+   min-height: 35px !important;
+ }
+
+ .mat-menu-item .mat-icon {
+   font-size: 16px;
+   color: #000;
+ }
+
+ .mat-menu-item {
+   color: #555;
+   height: 35px;
+   line-height: 35px;
  }

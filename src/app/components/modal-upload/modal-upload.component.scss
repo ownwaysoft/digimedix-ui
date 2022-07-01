@@ -1,0 +1,47 @@
+  .choose-file {
+    padding: 50px 30px;
+    border: 2px dashed #ccc;
+    border-radius: 4px;
+    text-align: center;
+    color: #555;
+
+    h5 {
+      font-size: 22px;
+      color: #b2b2b2;
+    }
+
+    p {
+      margin-bottom: 5px;
+      color: #b2b2b2;
+      font-size: 16px;
+    }
+
+    .file-btn {
+      border: 1px solid #1B54EB;
+      color: #1B54EB;
+      margin: 5px 5px 10px 5px;
+      background-color: rgba(27, 84, 235, 0.04);
+    }
+
+    .browse-btn {
+      background-color: #1B54EB;
+      color: #fff;
+      font-weight: normal;
+      margin-top: 5px;
+    }
+  }
+
+  h2 {
+    background-color: #1B54EB;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6px;
+    font-size: 16px;
+  }
+
+  .start {
+    background-color: #1B54EB;
+    color: #fff;
+  }
