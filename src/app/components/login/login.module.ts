@@ -13,7 +13,7 @@ import { MaterialModule } from 'src/app/shared/modules/material.module';
   imports: [
     CommonModule,
     LoginRoutingModule,
-    MaterialModule
+    MaterialModule,
   ]
 })
 export class LoginModule { }
