@@ -5,7 +5,7 @@ import {
   Input, Optional
 } from "@angular/core";
 import { NgControl } from "@angular/forms";
-import { CustomDirectiveConfig } from "../../models";
+import { CustomDirectiveConfig } from "../../models/app-models.model";
 
 @Directive({
   selector: "[validateInput],[formControlName][validateInput],[formControl][validateInput]",
@@ -226,12 +226,6 @@ export class ValidateInputDirective {
             finalClipboardData = finalClipboardData.slice(0, 10);
           }
           // this.applySpaceMaskToMobileNumbers(finalClipboardData, false);
-          break;
-        case Object.keys(this.config?.isADecimalWithConfig ? this.config.isADecimalWithConfig : {}).length > 0:
-          pastedText = fieldValue + pastedText;
-          pastedText.match(/[0-9]/g).forEach((word: string) => {
-            finalClipboardData += word;
-          });
           break;
         // Pasted text will not append with field value. Its same as isAnAlphaNumericOnly
         case this.config.isAlphaNumericWithPasteOnly:
