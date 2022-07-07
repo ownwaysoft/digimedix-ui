@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
+import { MaterialModule } from 'src/app/shared/modules/material.module';
+import { ModalUploadModule } from '../modal-upload/modal-upload.module';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
-import { MaterialModule } from 'src/app/shared/modules/material.module';
-import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [DashboardComponent],
@@ -12,7 +12,7 @@ import { MatMenuModule } from '@angular/material/menu';
     CommonModule,
     DashboardRoutingModule,
     MaterialModule,
-    MatMenuModule,
+    ModalUploadModule
   ],
 })
 export class DashboardModule {}

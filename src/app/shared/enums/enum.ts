@@ -20,6 +20,17 @@ enum RestfulMethods {
     DELETE = 'DELETE',
     GET = 'GET'
 }
+
+enum ModulesBasedApiSuffix {
+    LOGIN = "public/api/login",
+    SIGNUP = "public/api/signup",
+    UPLOAD = "public/api/upload",
+    GET_USER_CLIAMS = "public/api/Users/getUserCliams",
+    GET_DASHBOARD = "api/getdashboard ",
+    CREATE_FOLDER = "api/createfolder",
+}
+
+
 export {
-    ResponseMessageTypes, KeyboardEvents, RestfulMethods
+    ResponseMessageTypes, KeyboardEvents, RestfulMethods, ModulesBasedApiSuffix
 }

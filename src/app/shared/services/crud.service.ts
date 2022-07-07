@@ -12,7 +12,7 @@ export class CrudService {
   create(url: any, body: object | Array<object>,
   ): Observable<IApplicationResponse> {
     return this.httpClient.post<any>(
-      this.apiPrefixEnvironmentUrl,
+      this.apiPrefixEnvironmentUrl + url,
       body
     );
   }

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_URL : 'api-storage.primeenterprise.net/'
+  API_URL : 'http://api-storage.primeenterprise.net/'
 };
 
 /*

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { LayoutComponent } from './shared/components/layout/layout.component';
 import { AuthGuard } from './shared/services/authguards/auth.guard';
@@ -8,10 +7,12 @@ import { AuthGuard } from './shared/services/authguards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
+  // {
+  //   path: 'login', component: LoginComponent, data: { title: 'Login' }
+  // },
   {
-    path: 'login', component: LoginComponent, data: { title: 'Login' }
-  },
-  {
+    path: 'login', loadChildren: () => import('../app/components/login/login.module').then(m => m.LoginModule), data: { title: 'Login' }
+  }, {
     path: 'forgot-password', loadChildren: () => import('../app/components/forgot-password/forgot-password.module').then(m => m.ForgotPasswordModule), data: { title: 'Forgot Password' }
   },
   {
