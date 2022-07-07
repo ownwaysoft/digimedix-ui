@@ -29,7 +29,7 @@
             </mat-form-field>
           </div>
           <div class="col-12" style="margin-top: 20px;">
-            <button mat-raised-button color="primary" style="width: 100%;" type="submit">Log in</button>
+            <button mat-raised-button color="primary" style="width: 100%;" type="submit">{{loading ? 'Loging in...' : 'Log in'}}</button>
           </div>
           <div class="col-12" style="margin-top: 20px;text-align: center;">
             <p>Don't have a account? <a routerLink="/sign-up">Sign Up</a> </p>
