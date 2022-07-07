@@ -28,6 +28,7 @@ enum ModulesBasedApiSuffix {
     GET_USER_CLIAMS = "public/api/Users/getUserCliams",
     GET_DASHBOARD = "api/getdashboard ",
     CREATE_FOLDER = "api/createfolder",
+    GET_STORAGE_SERVER_ID = 'api/common/getstorageserverlist',
 }
 
 

@@ -33,7 +33,7 @@ export class ForgotPasswordComponent implements OnInit {
     }
     this.crudService.create(ModulesBasedApiSuffix.LOGIN, this.loginForm.value)
       .subscribe((response: IApplicationResponse) => {
-        if (response.resources) {
+        if (response.status == 1) {
           this.router.navigate(['login'])
         } else {
         }

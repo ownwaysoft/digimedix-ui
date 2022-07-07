@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ModulesBasedApiSuffix } from 'src/app/shared/enums';
-import { CrudService, SessionService } from 'src/app/shared/services';
+import { ModulesBasedApiSuffix, ResponseMessageTypes } from 'src/app/shared/enums';
+import { CrudService, SessionService, SnackbarService } from 'src/app/shared/services';
 import { IApplicationResponse } from 'src/app/shared/utils';
 
 @Component({
@@ -12,15 +12,15 @@ import { IApplicationResponse } from 'src/app/shared/utils';
 })
 export class LoginComponent implements OnInit {
 
-  isFormSubmitted: boolean = false
+  loading: boolean = false
   loginForm: FormGroup
 
   constructor(private formBuilder: FormBuilder, private crudService: CrudService, private sessionService: SessionService,
-    private router: Router) {
+    private router: Router, private snackbarService: SnackbarService) {
     let host = window.location.toString();
     this.loginForm = this.formBuilder.group({
-      email: [host.includes('localhost') ? 'test@test.com' : '', [Validators.required, Validators.email]],
-      password: [host.includes('localhost') ? 'admin123' : '', [Validators.required]],
+      email: [host.includes('localhost') ? 'admin@gmail.com' : '', [Validators.required, Validators.email]],
+      password: [host.includes('localhost') ? 'admin@123' : '', [Validators.required]],
       grant_type: ['password', [Validators.required]]
     })
   }
@@ -29,15 +29,17 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.isFormSubmitted = true;
+    this.loading = true;
     if (this.loginForm.invalid) {
-      this.isFormSubmitted = false;
+      this.loading = false;
       return;
     }
     this.crudService.create(ModulesBasedApiSuffix.LOGIN, this.loginForm.value)
       .subscribe((response: IApplicationResponse) => {
-        if (response.resources) {
-          this.sessionService.setItem('token', response.resources)
+        this.loading = false;
+        if (response.token) {
+          this.snackbarService.openSnackbar('Login Success!',ResponseMessageTypes.SUCCESS,)
+          this.sessionService.setItem('token', response?.token)
           this.router.navigate(['dashboard'])
         } else {
         }

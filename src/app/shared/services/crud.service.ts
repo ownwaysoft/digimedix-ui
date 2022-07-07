@@ -36,10 +36,10 @@ export class CrudService {
       if (params) {
         // finalParams = params ? params.toString().replace('%20', ' ') : null;
         // finalParams = params ? params.toString().replace('%2520', ' ') : null;
-        URL = this.apiPrefixEnvironmentUrl + "/" + retrievableId + "?" + params;
+        URL = this.apiPrefixEnvironmentUrl + "/" + url + retrievableId + "?" + params;
       }
       else {
-        URL = this.apiPrefixEnvironmentUrl + "/" + retrievableId;
+        URL = this.apiPrefixEnvironmentUrl + "/" + url + retrievableId;
       }
       if (params) {
         return this.httpClient.get<IApplicationResponse>(
@@ -47,7 +47,7 @@ export class CrudService {
         );
       } else {
         return this.httpClient.get<IApplicationResponse>(
-          this.apiPrefixEnvironmentUrl + "/" + retrievableId
+          this.apiPrefixEnvironmentUrl + "/" + url + retrievableId
         );
       }
     }
@@ -57,10 +57,10 @@ export class CrudService {
       if (params) {
         // finalParams = params ? params.toString().replace('%20', ' ') : null;
         // finalParams = params ? params.toString().replace('%2520', ' ') : null;
-        URL = this.apiPrefixEnvironmentUrl + "?" + params;
+        URL = this.apiPrefixEnvironmentUrl + url + "?" + params;
       }
       else {
-        URL = this.apiPrefixEnvironmentUrl;
+        URL = this.apiPrefixEnvironmentUrl + url;
       }
 
       return this.httpClient.get<IApplicationResponse>(
@@ -132,7 +132,7 @@ export class CrudService {
         })
       })
     else
-      return this.httpClient.get( this.apiPrefixEnvironmentUrl, {
+      return this.httpClient.get(this.apiPrefixEnvironmentUrl, {
         responseType: 'blob',
         withCredentials: false,
         headers: new HttpHeaders({

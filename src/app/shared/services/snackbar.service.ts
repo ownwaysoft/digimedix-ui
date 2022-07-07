@@ -35,6 +35,9 @@ export class SnackbarService {
     this.config.panelClass = ((type === ResponseMessageTypes.SUCCESS) ? ['success'] : (type === ResponseMessageTypes.ERROR) ? ['error'] :
       (type === ResponseMessageTypes.WARNING) ? ['warning'] : ['info']);
     // this.snackbar.openFromComponent(CustomSnackBarComponent, this.config)
+    this.snackbar.open(message, type, {
+      duration: 2000,
+    });
   }
 }
 

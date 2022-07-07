@@ -1,11 +1,14 @@
 import { CrudType, ValidatorTypes } from './enums.utils';
 interface IApplicationResponse {
-  isSuccess: boolean,
-  message: string,
-  statusCode: number,
-  totalCount: number,
-  exceptionMessage?: string,
-  resources: any
+  // isSuccess: boolean,
+  // message: string,
+  // statusCode: number,
+  // totalCount: number,
+  // exceptionMessage?: string,
+  // resources: any
+  msg: string,
+  token: string
+  status: number
 }
 
 interface BreadCrumbItem {

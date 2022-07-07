@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { RxjsService } from 'src/app/shared/services';
 import { ModalUploadComponent } from '../modal-upload/modal-upload.component';
 
 @Component({
@@ -8,9 +9,13 @@ import { ModalUploadComponent } from '../modal-upload/modal-upload.component';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog,private rxjsServices: RxjsService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.rxjsServices.setGlobalLoaderProperty(true)
+    }, 500);
+  }
 
   openDialog() {
     const dialogRef = this.dialog.open(ModalUploadComponent);
