@@ -38,14 +38,27 @@ export class LoginComponent implements OnInit {
       .subscribe((response: IApplicationResponse) => {
         this.loading = false;
         if (response.token) {
-          this.snackbarService.openSnackbar('Login Success!',ResponseMessageTypes.SUCCESS,)
+          this.snackbarService.openSnackbar('Login Success!', ResponseMessageTypes.SUCCESS)
           this.sessionService.setItem('token', response?.token)
+          this.getUserData()
           this.router.navigate(['dashboard'])
         } else {
+          this.snackbarService.openSnackbar(response.msg, ResponseMessageTypes.WARNING)
         }
       }, error => {
-        this.sessionService.setItem('token', 'test')
-        this.router.navigate(['dashboard'])
+        this.loading = false;
+        this.snackbarService.openSnackbar(error.error.message, ResponseMessageTypes.WARNING)
+      });
+  }
+
+  getUserData() {
+    this.crudService.get(ModulesBasedApiSuffix.GET_USER_CLIAMS)
+      .subscribe((response: IApplicationResponse) => {
+        this.loading = false;
+        if (response.status == 1) {
+          // this.sessionService.setItem('token', response?.token)
+        }
+      }, error => {
       });
   }
 

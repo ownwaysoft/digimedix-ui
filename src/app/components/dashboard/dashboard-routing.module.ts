@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
+import { DetailViewComponent } from './detail-view/detail-view.component';
 
 const routes: Routes = [
   {
-    path: '', component: DashboardComponent, data: { title: 'Share' }
+    path: '', component: DashboardComponent, data: { title: 'Dashboard' }
+  },  {
+    path: ':id', component: DetailViewComponent, data: { title: 'Details' }
   },
 ];
 

@@ -2,8 +2,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ModulesBasedApiSuffix } from 'src/app/shared/enums';
-import { CrudService, SessionService } from 'src/app/shared/services';
+import { CountryISO } from 'ngx-intl-tel-input';
+import { ModulesBasedApiSuffix, ResponseMessageTypes } from 'src/app/shared/enums';
+import { CrudService, SessionService, SnackbarService } from 'src/app/shared/services';
 import { IApplicationResponse } from 'src/app/shared/utils';
 
 @Component({
@@ -14,19 +15,24 @@ import { IApplicationResponse } from 'src/app/shared/utils';
 export class SignUpComponent implements OnInit {
   loading: boolean = false
   signupForm: FormGroup
+  storageServerList: any = []
+
+  separateDialCode = false;
+  CountryISO = CountryISO;
+  preferredCountries: CountryISO[] = [CountryISO.India, CountryISO.UnitedStates, CountryISO.UnitedKingdom];
 
   constructor(private formBuilder: FormBuilder, private crudService: CrudService, private sessionService: SessionService,
-    private router: Router) {
+    private router: Router, private snackbarService: SnackbarService) {
     this.signupForm = this.formBuilder.group({
-      firstname: ['', [Validators.required]],
-      lastname: ['', [Validators.required]],
+      firstname: ['', [Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(100)])]],
+      lastname: ['', [Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(100)])]],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required]],
-      company_name: ['', [Validators.required]],
+      company_name: ['', [Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(100)])]],
       storage_server: ['', [Validators.required]],
-      account_name: ['PrimeEnterprise', [Validators.required]],
-      password: ['', [Validators.required]],
-      c_password: ['', [Validators.required]]
+      account_name: ['', [Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(50)])]],
+      password: ['', [Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(100)])]],
+      c_password: ['', [Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(100)])]]
     })
   }
 
@@ -35,10 +41,11 @@ export class SignUpComponent implements OnInit {
   }
 
   getStorageServerId() {
-    this.crudService.get(ModulesBasedApiSuffix.GET_STORAGE_SERVER_ID)
-      .subscribe((response: IApplicationResponse) => {
+    this.crudService.get(ModulesBasedApiSuffix.SIGNUP)
+      .subscribe((response: any) => {
         if (response) {
-          this.signupForm.get('storage_server')?.setValue(response)
+          // this.signupForm.get('storage_server')?.setValue(response)
+          this.storageServerList = response?.storage_server
         }
       }, error => {
       });
@@ -50,13 +57,20 @@ export class SignUpComponent implements OnInit {
       this.loading = false;
       return;
     }
-    this.crudService.create(ModulesBasedApiSuffix.SIGNUP, this.signupForm.value)
+    let formValue = this.signupForm.getRawValue()
+    formValue.phone = formValue.phone.e164Number
+    this.crudService.create(ModulesBasedApiSuffix.SIGNUP, formValue)
       .subscribe((response: IApplicationResponse) => {
         this.loading = false;
         if (response.status == 1) {
+          this.snackbarService.openSnackbar(response.msg, ResponseMessageTypes.SUCCESS)
+          this.router.navigate(['/login'])
         } else {
+          this.snackbarService.openSnackbar(response.msg, ResponseMessageTypes.WARNING)
         }
       }, error => {
+        this.loading = false;
+        this.snackbarService.openSnackbar(error.error.message, ResponseMessageTypes.WARNING)
       });
   }
 

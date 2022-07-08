@@ -25,13 +25,11 @@ enum ModulesBasedApiSuffix {
     LOGIN = "public/api/login",
     SIGNUP = "public/api/signup",
     UPLOAD = "public/api/upload",
-    GET_USER_CLIAMS = "public/api/Users/getUserCliams",
-    GET_DASHBOARD = "api/getdashboard ",
-    CREATE_FOLDER = "api/createfolder",
-    GET_STORAGE_SERVER_ID = 'api/common/getstorageserverlist',
+    GET_USER_CLIAMS = "public/api/users/getUserCliams",
+    GET_DASHBOARD = "public/api/getdashboard ",
+    CREATE_FOLDER = "public/api/createfolder",
+    GET_STORAGE_SERVER_ID = 'public/api/common/getstorageserverlist',
 }
 
 
-export {
-    ResponseMessageTypes, KeyboardEvents, RestfulMethods, ModulesBasedApiSuffix
-}
+export { ResponseMessageTypes, KeyboardEvents, RestfulMethods, ModulesBasedApiSuffix }

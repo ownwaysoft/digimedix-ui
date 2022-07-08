@@ -1,23 +1,39 @@
-import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
+import { HttpErrorResponse, HttpEvent, HttpHandler, HttpHeaders, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import { ResponseMessageTypes, RestfulMethods } from '../../enums';
+import { ModulesBasedApiSuffix, ResponseMessageTypes, RestfulMethods } from '../../enums';
 import { RxjsService } from '../rxjs.services';
+import { SessionService } from '../session.service';
 import { SnackbarService } from '../snackbar.service';
 
 @Injectable({ providedIn: 'root' })
 export class SuccessErrorHandlerInterceptor implements HttpInterceptor {
   restRequestMethod: RestfulMethods | any;
   request: HttpRequest<any> | any;
-  constructor(private rxjsService: RxjsService, private snackbarService: SnackbarService, private router: Router) { }
+  constructor(private rxjsService: RxjsService, private sessionService: SessionService, private snackbarService: SnackbarService, private router: Router) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     this.request = request;
     this.restRequestMethod = request.method;
+    // check whether to append bearer token in authorization token header based on requests 
+    if (!request.urlWithParams.includes(ModulesBasedApiSuffix.LOGIN) && !request.urlWithParams.includes(ModulesBasedApiSuffix.SIGNUP)) {
+      // append bearer token for every server request
+      let headers = new HttpHeaders({
+        "Authorization": `Bearer ${this.sessionService.getItem('token')}`
+      });
+      request = request.clone({
+        headers
+      });
+    }
     return next.handle(request)
-    
+      .pipe(map((response: HttpEvent<any>) =>
+        this.successHandler(response)),
+        // catchError(error =>
+        //   this.errorHandler(error))
+      )
+
   }
 
   private successHandler(response: HttpEvent<any>): HttpEvent<any> | any {
@@ -60,19 +76,20 @@ export class SuccessErrorHandlerInterceptor implements HttpInterceptor {
   }
 
 
-  private errorHandler(error: HttpEvent<any>): Observable<HttpEvent<any>> | any {
-    if (error instanceof HttpErrorResponse) {
-      switch (error.status) {
-        case 401:
-          this.router.navigateByUrl("login");
-          break;
-        // case 500:
-        //   this.snackbarService.openSnackbar(error.statusText, ResponseMessageTypes.ERROR);
-        default:
-          //this.snackbarService.openSnackbar("Error 403 - This web app is stopped.",ResponseMessageTypes.ERROR);
-          break;
-      }
-      return throwError(error);
-    }
-  }
+  // private errorHandler(error: HttpEvent<any>) {
+  //   if (error instanceof HttpErrorResponse) {
+  //     switch (error.status) {
+  //       case 401:
+  //         this.router.navigateByUrl("login");
+  //         break;
+  //       // case 500:
+  //       //   this.snackbarService.openSnackbar(error.statusText, ResponseMessageTypes.ERROR);
+  //       default:
+  //         this.snackbarService.openSnackbar("Error 403 - This web app is stopped.",ResponseMessageTypes.ERROR);
+  //         break;
+  //     }
+  //     return throwError(error);
+  //   }
+  // }
+
 }

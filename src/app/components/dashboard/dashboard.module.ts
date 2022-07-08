@@ -5,9 +5,10 @@ import { MaterialModule } from 'src/app/shared/modules/material.module';
 import { ModalUploadModule } from '../modal-upload/modal-upload.module';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
+import { DetailViewComponent } from './detail-view/detail-view.component';
 
 @NgModule({
-  declarations: [DashboardComponent],
+  declarations: [DashboardComponent, DetailViewComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
