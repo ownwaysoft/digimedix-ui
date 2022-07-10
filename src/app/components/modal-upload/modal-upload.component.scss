@@ -1,3 +1,31 @@
+  .mat-typography {
+    width: 155vh;
+  }
+
+  .mat-typography-title {
+    padding-right: 0;
+    background-color: #1B54EB;
+    color: #fff;
+    color: #fff;
+    margin-bottom: 50px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 24px;
+    font-size: 20px;
+    flex-direction: row;
+
+    h2 {
+      font-size: 20px;
+      margin: 0;
+    }
+  }
+
+  .mat-dialog-container {
+    padding-top: 0 !important;
+  }
+
   .choose-file {
     padding: 50px 30px;
     border: 2px dashed #ccc;
@@ -31,15 +59,6 @@
     }
   }
 
-  h2 {
-    background-color: #1B54EB;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 6px;
-    font-size: 16px;
-  }
 
   .start {
     background-color: #1B54EB;

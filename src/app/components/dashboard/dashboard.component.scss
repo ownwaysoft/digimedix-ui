@@ -1,5 +1,6 @@
 .notification-wrapper {
   padding: 10px;
+  border-top: 1px solid rgb(238, 238, 240);
 
   .upload-wrapper {
     display: flex;
@@ -25,14 +26,47 @@
     padding: 5px 0 10px 0;
 
     .sort-filter {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: flex-end;
+
       button {
-        width: 10%;
+        // width: 10%;
+        color: #1B54EB;
         background-color: #d5d5d5;
       }
 
-      mat-form-field {
-        // width: 58%;
+      .refresh-btn {
+        min-width: 35px;
+        width: auto;
+        min-height: 28px;
+        padding: 0px 5px;
       }
+
+      mat-form-field {
+        width: 7%;
+        color: #1B54EB;
+        background-color: #d5d5d5;
+        border-radius: 4px;
+        box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+        margin-right: 30px;
+        margin-left: 15px;
+        height: 35px;
+
+        .mat-form-field-infix {
+          padding-top: 0;
+        }
+
+        .mat-form-field-appearance-fill .mat-form-field-infix {
+          padding-top: 0;
+        }
+      }
+    }
+
+    .mat-form-field-appearance-fill .mat-form-field-infix {
+      padding-top: 0;
     }
 
     .search-bar {
@@ -53,6 +87,7 @@
       input {
         border: none;
         outline: none;
+        background: transparent;
       }
 
       mat-icon {

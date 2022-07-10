@@ -14,6 +14,26 @@
 
   <div>
     <section>
+      <!-- <div class="example-button-row upload-wrapper">
+        <button class="upload" mat-raised-button>
+          <mat-icon>compare_arrow</mat-icon> &nbsp; Move
+        </button>
+        <button class="upload" mat-raised-button>
+          <mat-icon>file_copy</mat-icon> &nbsp; Copy
+        </button>
+        <button class="upload" mat-raised-button>
+          <mat-icon>insert_drive_file</mat-icon> &nbsp; Compress
+        </button>
+        <button class="upload" mat-raised-button>
+          <mat-icon>send</mat-icon> &nbsp; Send Selected
+        </button>
+        <button class="upload" mat-raised-button>
+          <mat-icon>cloud_download</mat-icon> &nbsp; Download Selected
+        </button>
+        <button class="upload" mat-raised-button>
+          <mat-icon>delete</mat-icon> &nbsp; Delete
+        </button>
+      </div> -->
       <div class="example-button-row upload-wrapper">
         <button class="upload" mat-raised-button (click)="openDialog()">
           <mat-icon>cloud_upload</mat-icon> &nbsp; Upload
@@ -26,34 +46,28 @@
   </div>
   <div class="sort-wrapper">
 
-    <div class="row sort-filter" style="margin: 0;">
-      <div class="col-xs-5 text-right">
-        <button mat-raised-button>
-          <mat-icon>refresh</mat-icon>
-        </button>
-      </div>
-      <div class="col-xs-2 text-right">
-        <mat-form-field appearance="fill">
-          <mat-select value="view">
-            <mat-option value="view">View</mat-option>
-            <mat-option value="timeline">Name</mat-option>
-            <mat-option value="path">Date</mat-option>
-            <mat-option value="name">Size</mat-option>
-            <mat-option value="name">Type</mat-option>
-            <mat-option value="name">Timeline</mat-option>
-            <mat-option value="name">View A List</mat-option>
-            <mat-option value="name">View As Gallery</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="col-xs-5">
-        <form>
-          <div class="search-bar">
-            <input type="text" placeholder="Search Notifications">
-            <mat-icon>search</mat-icon>
-          </div>
-        </form>
-      </div>
+    <div class="row sort-filter sort-css" style="margin: 0;">
+      <button class="refresh-btn" mat-button>
+        <mat-icon>refresh</mat-icon>
+      </button>
+      <mat-form-field appearance="fill">
+        <mat-select value="view">
+          <mat-option value="view">View</mat-option>
+          <mat-option value="timeline">Name</mat-option>
+          <mat-option value="path">Date</mat-option>
+          <mat-option value="name">Size</mat-option>
+          <mat-option value="name">Type</mat-option>
+          <mat-option value="name">Timeline</mat-option>
+          <mat-option value="name">View A List</mat-option>
+          <mat-option value="name">View As Gallery</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <form>
+        <div class="search-bar">
+          <input type="text" placeholder="Search">
+          <mat-icon>search</mat-icon>
+        </div>
+      </form>
     </div>
 
     <section class="example-section home-check">
