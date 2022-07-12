@@ -125,3 +125,25 @@ ngx-intl-tel-input input[disabled] {
 ngx-intl-tel-input input {
   width: 100%;
 }
+
+.sort-css .mat-form-field-appearance-fill .mat-form-field-infix {
+  padding-top: 0;
+}
+
+.sort-css {
+  .mat-select-value {
+    color: #1B54EB;
+  }
+
+  .mat-form-field-appearance-fill .mat-select-arrow-wrapper {
+    transform: translateY(0%);
+  }
+
+  .mat-select-arrow {
+    color: #1B54EB;
+  }
+}
+
+.mat-dialog-container {
+  padding-top: 0 !important;
+}
