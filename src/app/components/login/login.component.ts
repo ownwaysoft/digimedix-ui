@@ -41,7 +41,6 @@ export class LoginComponent implements OnInit {
           this.snackbarService.openSnackbar('Login Success!', ResponseMessageTypes.SUCCESS)
           this.sessionService.setItem('token', response?.token)
           this.getUserData()
-          this.router.navigate(['dashboard'])
         } else {
           this.snackbarService.openSnackbar(response.msg, ResponseMessageTypes.WARNING)
         }
@@ -53,11 +52,14 @@ export class LoginComponent implements OnInit {
 
   getUserData() {
     this.crudService.get(ModulesBasedApiSuffix.GET_USER_CLIAMS)
-      .subscribe((response: IApplicationResponse) => {
+      .subscribe((response: any) => {
         this.loading = false;
-        if (response.status == 1) {
-          // this.sessionService.setItem('token', response?.token)
-        }
+        // if (response.status == 1) {
+        // if(response){
+        this.sessionService.setUserItem('userData', response)
+        this.router.navigate(['dashboard'])
+        // }
+        // }
       }, error => {
       });
   }

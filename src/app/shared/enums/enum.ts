@@ -25,10 +25,11 @@ enum ModulesBasedApiSuffix {
     LOGIN = "public/api/login",
     SIGNUP = "public/api/signup",
     UPLOAD = "public/api/upload",
-    GET_USER_CLIAMS = "public/api/users/getUserCliams",
-    GET_DASHBOARD = "public/api/getdashboard ",
+    GET_USER_CLIAMS = "public/api/user/getUserClaims",
+    GET_DASHBOARD = "public/api/file/getDashboard",
     CREATE_FOLDER = "public/api/createfolder",
     GET_STORAGE_SERVER_ID = 'public/api/common/getstorageserverlist',
+    FOLDER_CREATE = 'public/api/file/createfolder'
 }
 
 
