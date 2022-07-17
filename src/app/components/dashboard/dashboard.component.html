@@ -49,11 +49,11 @@
   <div class="sort-wrapper" style="margin-top: 0">
 
     <div class="row sort-filter sort-css" style="margin: 0;">
-      <button class="refresh-btn" mat-button>
+      <button class="refresh-btn" mat-button (click)="getDashboardData()">
         <mat-icon>refresh</mat-icon>
       </button>
       <mat-form-field appearance="fill">
-        <mat-select value="view">
+        <mat-select value="view" (selectionChange)="getDashboardData()">
           <mat-option value="view">View</mat-option>
           <mat-option value="timeline">Name</mat-option>
           <mat-option value="path">Date</mat-option>
