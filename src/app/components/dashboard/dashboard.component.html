@@ -35,10 +35,10 @@
         </button>
       </div> -->
       <div class="example-button-row upload-wrapper">
-        <button class="upload" mat-raised-button (click)="openUploadDialog()">
+        <button class="upload" mat-raised-button (click)="modelService.openUploadDialog()">
           <mat-icon>cloud_upload</mat-icon> &nbsp; Upload
         </button>
-        <button mat-button class="new-folder"(click)="openCreateFolderDialog()">
+        <button mat-button class="new-folder"(click)="modelService.openCreateFolderDialog()">
           <mat-icon>create_new_folder</mat-icon> &nbsp; New Folder
         </button>
       </div>

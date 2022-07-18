@@ -23,7 +23,8 @@ export class S3UploadService {
       }
     );
     const params = {
-      Bucket: userData?.directory_info?.bucket_name,
+      // Bucket: userData?.directory_info?.bucket_name,
+      Bucket: 'USA',
       Key: folderName + file.name,
       Body: file,
       ACL: 'public-read',

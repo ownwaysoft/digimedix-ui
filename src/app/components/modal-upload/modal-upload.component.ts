@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModelService } from 'src/app/shared/services/model.service';
 
 import { S3UploadService } from 'src/app/shared/services/s3-upload.service';
 @Component({
@@ -9,7 +10,7 @@ import { S3UploadService } from 'src/app/shared/services/s3-upload.service';
 export class ModalUploadComponent implements OnInit {
   selectedFiles!: FileList;
 
-  constructor(private s3UploadService: S3UploadService) {
+  constructor(private s3UploadService: S3UploadService,public modelService:ModelService) {
    }
 
   ngOnInit(): void {

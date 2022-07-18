@@ -12,6 +12,7 @@ import { LayoutComponent } from './shared/components/layout/layout.component';
 import { SideBarComponent } from './shared/components/side-bar/side-bar.component';
 import { SuccessErrorHandlerInterceptor } from './shared/services';
 import { MaterialModule } from './shared/modules/material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,9 @@ import { MaterialModule } from './shared/modules/material.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     Title,

@@ -11,10 +11,12 @@
     <p>- or -</p>
     <section>
       <div class="example--row">
-
-        <input  type="file" (change)="selectFile($event)">
-        <button class="file-btn" mat-stroked-button>Add Files</button>
-        <button class="file-btn" mat-stroked-button>Add Folder</button>
+        <label class="file-btn custom-file-upload">
+          <input type="file" (change)="selectFile($event)" />
+          Add Files
+      </label>
+        <!-- <button class="file-btn" mat-stroked-button>Add Files</button> -->
+        <button class="file-btn" mat-stroked-button  mat-dialog-close  (click)="modelService.openCreateFolderDialog()">Add Folder</button>
       </div>
     </section>
 

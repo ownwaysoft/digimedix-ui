@@ -4,9 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { ModulesBasedApiSuffix } from 'src/app/shared/enums';
 import { CrudService, RxjsService, SessionService } from 'src/app/shared/services';
+import { ModelService } from 'src/app/shared/services/model.service';
 import { IApplicationResponse } from 'src/app/shared/utils';
-import { ModalCreateFolderComponent } from '../modal-create-folder/modal-create-folder.component';
-import { ModalUploadComponent } from '../modal-upload/modal-upload.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,7 +16,7 @@ export class DashboardComponent implements OnInit {
   @ViewChild(MatMenuTrigger, { static: true }) menuTrigger: any;
   dashBoardItems: any = []
   loading: boolean = false
-  constructor(public dialog: MatDialog, private rxjsServices: RxjsService, private sessionService: SessionService, private crudService: CrudService) { }
+  constructor(public dialog: MatDialog, private rxjsServices: RxjsService, private sessionService: SessionService, private crudService: CrudService,public modelService:ModelService) { }
 
   ngOnInit(): void {
     this.getDashboardData()
@@ -44,25 +43,6 @@ export class DashboardComponent implements OnInit {
       });
   }
 
-  openUploadDialog() {
-    const dialogRef = this.dialog.open(ModalUploadComponent, {
-      width: '40%'
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
-
-  openCreateFolderDialog() {
-    const dialogRef = this.dialog.open(ModalCreateFolderComponent, {
-      width: '40%'
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-      this.getDashboardData()
-    });
-  }
+ 
 
 }
