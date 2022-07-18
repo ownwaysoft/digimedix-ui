@@ -11,7 +11,7 @@ export class S3UploadService {
 
   constructor(private sessionService: SessionService) { }
 
-  uploadFile(file: any) {
+  uploadFile(file: any, folderName: any) {
 
     let userData = this.sessionService.getUserItem('userData')
     const contentType = file.type;
@@ -19,12 +19,12 @@ export class S3UploadService {
       {
         accessKeyId: environment.S3_ACCESS_KEY,
         secretAccessKey: environment.S3_SECRET_KEY,
-        region: userData?.directory_info?.region
+        region: userData?.user?.storage_server
       }
     );
     const params = {
-      Bucket: userData?.directory_info?.bucket,
-      Key: file.name,
+      Bucket: userData?.directory_info?.bucket_name,
+      Key: folderName + file.name,
       Body: file,
       ACL: 'public-read',
       ContentType: contentType
