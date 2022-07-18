@@ -19,12 +19,12 @@ export class S3UploadService {
       {
         accessKeyId: environment.S3_ACCESS_KEY,
         secretAccessKey: environment.S3_SECRET_KEY,
-        region: userData?.user?.storage_server
+        // region: userData?.user?.storage_server,
+        region: 'ca-central-1'
       }
     );
     const params = {
-      // Bucket: userData?.directory_info?.bucket_name,
-      Bucket: 'USA',
+      Bucket: userData?.directory_info?.bucket_name,
       Key: folderName + file.name,
       Body: file,
       ACL: 'public-read',

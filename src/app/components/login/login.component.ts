@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     }
     this.crudService.create(ModulesBasedApiSuffix.LOGIN, this.loginForm.value)
       .subscribe((response: IApplicationResponse) => {
-        this.loading = false;
+        // this.loading = false;
         if (response.token) {
           this.snackbarService.openSnackbar('Login Success!', ResponseMessageTypes.SUCCESS)
           this.sessionService.setItem('token', response?.token)
@@ -51,6 +51,7 @@ export class LoginComponent implements OnInit {
   }
 
   getUserData() {
+    this.loading = true;
     this.crudService.get(ModulesBasedApiSuffix.GET_USER_CLIAMS)
       .subscribe((response: any) => {
         this.loading = false;
@@ -61,6 +62,7 @@ export class LoginComponent implements OnInit {
         // }
         // }
       }, error => {
+        this.loading = false;
       });
   }
 
