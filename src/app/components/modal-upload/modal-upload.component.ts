@@ -1,15 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 
+import { S3UploadService } from 'src/app/shared/services/s3-upload.service';
 @Component({
   selector: 'app-modal-upload',
   templateUrl: './modal-upload.component.html',
   styleUrls: ['./modal-upload.component.scss']
 })
 export class ModalUploadComponent implements OnInit {
+  selectedFiles!: FileList;
 
-  constructor() { }
+  constructor(private s3UploadService: S3UploadService) {
+   }
 
   ngOnInit(): void {
   }
+
+  upload() {
+    const file = this.selectedFiles.item(0);
+    this.s3UploadService.uploadFile(file);
+  }
+
+  selectFile(event?:any) {
+    this.selectedFiles = event.target.files;
+  }
+
+
 
 }

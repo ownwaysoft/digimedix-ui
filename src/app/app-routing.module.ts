@@ -7,9 +7,6 @@ import { AuthGuard } from './shared/services/authguards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  // {
-  //   path: 'login', component: LoginComponent, data: { title: 'Login' }
-  // },
   {
     path: 'login', loadChildren: () => import('../app/components/login/login.module').then(m => m.LoginModule), data: { title: 'Login' }
   }, {
