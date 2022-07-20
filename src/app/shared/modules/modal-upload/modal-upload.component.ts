@@ -18,7 +18,7 @@ export class ModalUploadComponent implements OnInit {
 
   upload() {
     const file = this.selectedFiles.item(0);
-    this.s3UploadService.uploadFile(file,'mm/');
+    this.s3UploadService.uploadFile(file);
   }
 
   selectFile(event?:any) {

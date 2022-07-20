@@ -29,7 +29,10 @@ enum ModulesBasedApiSuffix {
     GET_DASHBOARD = "public/api/file/getDashboard",
     CREATE_FOLDER = "public/api/createfolder",
     GET_STORAGE_SERVER_ID = 'public/api/common/getstorageserverlist',
-    FOLDER_CREATE = 'public/api/file/createfolder'
+    FOLDER_CREATE = 'public/api/file/createfolder',
+    FOLDER_DELETE = 'public/api/file/delete',
+    FOLDER_RENAME = 'public/api/file/folder-rename',
+    FOLDER_INFO = 'public/api/file/getinfo',
 }
 
 

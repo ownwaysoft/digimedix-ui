@@ -19,8 +19,8 @@ export class LoginComponent implements OnInit {
     private router: Router, private snackbarService: SnackbarService) {
     let host = window.location.toString();
     this.loginForm = this.formBuilder.group({
-      email: [host.includes('localhost') ? 'admin@gmail.com' : '', [Validators.required, Validators.email]],
-      password: [host.includes('localhost') ? 'admin@123' : '', [Validators.required]],
+      email: [host.includes('localhost') ? 'vijay@primeenterprise.net' : '', [Validators.required, Validators.email]],
+      password: [host.includes('localhost') ? 'Vijay1234' : '', [Validators.required]],
       grant_type: ['password', [Validators.required]]
     })
   }

@@ -1,0 +1,17 @@
+<mat-dialog-content class="mat-typography-title">
+    <h2 mat-dialog-title>Delete Folder
+    </h2>
+    <mat-icon mat-dialog-close style="cursor: pointer">close</mat-icon>
+</mat-dialog-content>
+<mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+<form class="form-signin">
+    <mat-dialog-content class="mat-typography">
+        <p>Are you sure you want to delete {{folderName ? folderName : 'this'}} ? </p>
+    </mat-dialog-content>
+    <br />
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button class="start-btn" mat-button cdkFocusInitial (click)="onSubmit()">Delete Folder</button>
+    </mat-dialog-actions>
+
+</form>

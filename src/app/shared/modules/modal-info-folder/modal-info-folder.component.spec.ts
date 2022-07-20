@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DetailViewComponent } from './detail-view.component';
+import { ModalInfoFolderComponent } from './modal-info-folder.component';
 
-describe('DetailViewComponent', () => {
-  let component: DetailViewComponent;
-  let fixture: ComponentFixture<DetailViewComponent>;
+describe('ModalInfoFolderComponent', () => {
+  let component: ModalInfoFolderComponent;
+  let fixture: ComponentFixture<ModalInfoFolderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DetailViewComponent ]
+      declarations: [ ModalInfoFolderComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DetailViewComponent);
+    fixture = TestBed.createComponent(ModalInfoFolderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

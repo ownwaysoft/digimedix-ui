@@ -1,0 +1,43 @@
+<mat-dialog-content class="mat-typography-title">
+    <h2 mat-dialog-title>Info Folder
+    </h2>
+    <mat-icon mat-dialog-close style="cursor: pointer">close</mat-icon>
+</mat-dialog-content>
+<mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+<form class="form-signin">
+    <mat-dialog-content class="mat-typography">
+        <div class="row">
+            <div class="col-lg-5"><label for="">Name</label></div>
+            <div class="col-lg-7"><p>{{folderInfo?.name ? folderInfo?.name : '--'}}</p></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5"><label for="">Kind</label></div>
+            <div class="col-lg-7"><p>{{folderInfo?.name ? folderInfo?.name : '--'}}</p></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5"><label for="">Size</label></div>
+            <div class="col-lg-7"><p>{{folderInfo?.name ? folderInfo?.name : '--'}}</p></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5"><label for="">Where</label></div>
+            <div class="col-lg-7"><p>{{folderInfo?.name ? folderInfo?.name : '--'}}</p></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5"><label for="">Created</label></div>
+            <div class="col-lg-7"><p>{{folderInfo?.name ? folderInfo?.name : '--'}}</p></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5"><label for="">Updated</label></div>
+            <div class="col-lg-7"><p>{{folderInfo?.name ? folderInfo?.name : '--'}}</p></div>
+        </div>
+        <div class="row">
+            <div class="col-12"><p>This file contails 1 file</p></div>
+        </div>
+    </mat-dialog-content>
+    <br />
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancel</button>
+        <!-- <button class="start-btn" mat-button cdkFocusInitial>Done</button> -->
+    </mat-dialog-actions>
+
+</form>

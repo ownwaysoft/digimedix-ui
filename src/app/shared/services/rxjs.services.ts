@@ -11,6 +11,7 @@ export class RxjsService {
   
 
     private globalLoaderPropertySubject = new BehaviorSubject(false);
+    private globalReloadPropertySubject = new BehaviorSubject(false);
   
   
     setGlobalLoaderProperty(isLoading: boolean) {
@@ -21,5 +22,12 @@ export class RxjsService {
         return this.globalLoaderPropertySubject.asObservable();
     }
 
+    setGlobalReloadProperty(isLoading: boolean) {
+        this.globalReloadPropertySubject.next(isLoading);
+    }
+
+    getGlobalReloadProperty(): Observable<boolean> {
+        return this.globalReloadPropertySubject.asObservable();
+    }
   
 }

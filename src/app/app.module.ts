@@ -13,6 +13,10 @@ import { SideBarComponent } from './shared/components/side-bar/side-bar.componen
 import { SuccessErrorHandlerInterceptor } from './shared/services';
 import { MaterialModule } from './shared/modules/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalDeleteFolderModule } from './shared/modules/modal-delete-folder/modal-delete-folder.module';
+import { ModalUploadModule } from './shared/modules/modal-upload/modal-upload.module';
+import { ModalInfoFolderModule } from './shared/modules/modal-info-folder/modal-info-folder.module';
+import { ModalCreateFolderModule } from './shared/modules/modal-create-folder/modal-create-folder.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MaterialModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    ModalDeleteFolderModule,
+    ModalUploadModule,
+    ModalInfoFolderModule,
+    ModalCreateFolderModule
   ],
   providers: [
     Title,
