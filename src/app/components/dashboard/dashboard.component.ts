@@ -16,8 +16,8 @@ import { IApplicationResponse } from 'src/app/shared/utils';
 export class DashboardComponent implements OnInit {
   @ViewChild(MatMenuTrigger, { static: true }) menuTrigger: any;
   dashBoardItems: any = []
-  loading: boolean = false
   folderName: any
+  selectedItems: any = []
 
   constructor(public dialog: MatDialog, private activatedRoute: ActivatedRoute, private rxjsServices: RxjsService, private sessionService: SessionService, private crudService: CrudService, public modelService: ModelService) {
     this.activatedRoute.queryParamMap.subscribe((params: any) => {
@@ -33,7 +33,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getDashboardData()
+    // this.getDashboardData()
   }
 
   onRightClick(event: any) {
@@ -42,21 +42,31 @@ export class DashboardComponent implements OnInit {
   }
 
   getDashboardData() {
-    this.loading = true;
+    this.rxjsServices.setGlobalProgressBarProperty(true)
     let userData = this.sessionService.getUserItem('userData')
-    console.log(userData)
     let requestParams = new HttpParams().set('baseDirectory', '/' + userData?.directory_info?.baseDirectory + (this.folderName ? this.folderName : '/'));
     this.crudService.get(ModulesBasedApiSuffix.GET_DASHBOARD, null, requestParams)
       .subscribe((response: IApplicationResponse) => {
-        // if (response.status == 1) {
-        // }
-        this.loading = false;
+        this.rxjsServices.setGlobalProgressBarProperty(false)
         this.dashBoardItems = response
       }, error => {
-        this.loading = false;
+        this.rxjsServices.setGlobalProgressBarProperty(false)
       });
   }
 
+  onSelected(item: any, event: any) {
+    item.checked = event.checked;
+    this.getSelectedItems()
+  }
 
+  getSelectedItems(){
+   let items = this.dashBoardItems.filter((x:any)=>x.checked == true)
+   this.selectedItems = items
+  }
+
+  onSelecteAll(event:any){
+   let items = this.dashBoardItems.filter((x:any)=>x.checked = event.checked)
+   this.selectedItems = items
+  }
 
 }

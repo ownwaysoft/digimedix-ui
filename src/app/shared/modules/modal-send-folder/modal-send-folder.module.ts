@@ -1,21 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { ShareRoutingModule } from './share-routing.module';
-import { ShareComponent } from './share.component';
-import { MaterialModule } from 'src/app/shared/modules/material.module';
+import { ModalSendFolderComponent } from './modal-send-folder.component';
 import { CommonShareModule } from 'src/app/modules/common-share/common-share.module';
+import { MaterialModule } from '../material.module';
+
 
 
 @NgModule({
   declarations: [
-    ShareComponent
+    ModalSendFolderComponent
   ],
   imports: [
     CommonModule,
-    ShareRoutingModule,
     MaterialModule,
     CommonShareModule
   ]
 })
-export class ShareModule { }
+export class ModalSendFolderModule { }

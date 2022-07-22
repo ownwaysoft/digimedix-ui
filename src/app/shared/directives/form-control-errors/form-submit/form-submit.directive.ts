@@ -33,7 +33,7 @@ export class FormSubmitDirective {
       const areClassNamesListOneNotIncluded = classNames.includes("ng-valid");
       if (areFormClassNamesNotIncluded && areClassNamesListOneNotIncluded) {
         this.httpCancelService.cancelPendingRequestsOnFormSubmission();
-        this.rxjsService.setGlobalLoaderProperty(false);
+        this.rxjsService.setGlobalProgressBarProperty(false);
         this.snackbarService.openSnackbar("No Changes were detected", ResponseMessageTypes.WARNING);
       }
       // else{

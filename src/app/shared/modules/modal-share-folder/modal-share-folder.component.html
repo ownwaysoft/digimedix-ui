@@ -1,18 +1,24 @@
-<mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+
+
+<!-- <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar> -->
 
 <mat-dialog-content class="mat-typography-title">
-    <h2 mat-dialog-title>Delete Folder
+    <h2 mat-dialog-title>Sharing 
     </h2>
     <mat-icon mat-dialog-close style="cursor: pointer">close</mat-icon>
 </mat-dialog-content>
-<form class="form-signin">
+<form class="form-signin" >
+
+
     <mat-dialog-content class="mat-typography">
-        <p>Are you sure you want to delete {{folderName ? folderName : 'this'}} ? </p>
+
+        <app-common-share></app-common-share>
+
     </mat-dialog-content>
     <br />
     <mat-dialog-actions align="end">
         <button mat-button mat-dialog-close>Cancel</button>
-        <button class="start-btn" mat-button color="primary" cdkFocusInitial (click)="onSubmit()">Delete Folder</button>
+        <button class="start-btn " color="primary" mat-button  cdkFocusInitial>Save</button>
     </mat-dialog-actions>
 
 </form>

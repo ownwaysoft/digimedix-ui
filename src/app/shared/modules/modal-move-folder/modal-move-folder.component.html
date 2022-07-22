@@ -1,17 +1,18 @@
 <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
 
 <mat-dialog-content class="mat-typography-title">
-    <h2 mat-dialog-title>Create Folder
+    <h2 mat-dialog-title>{{actionName}} Folder {{folderName}} to :
     </h2>
     <mat-icon mat-dialog-close style="cursor: pointer">close</mat-icon>
 </mat-dialog-content>
 <form class="form-signin" [formGroup]='createFolderForm' (ngSubmit)="onSubmit()">
-
-
+    <p-tree [value]="items" selectionMode="single" [(selection)]="selectedItem" (onNodeSelect)="onNodeSelect($event)"></p-tree>
     <div class="col-12" style="margin-top: 15px;">
-        <mat-form-field appearance="outline">
-            <mat-label>Folder Name</mat-label>
-            <input matInput placeholder="Folder Name" formControlName="folderName">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <!-- <mat-label>Telephone</mat-label> -->
+            <span matPrefix>Path: &nbsp;</span>
+            <input type="tel" matInput formControlName="folderName">
+            <!-- <mat-icon matSuffix>mode_edit</mat-icon> -->
         </mat-form-field>
     </div>
     <mat-dialog-content class="mat-typography">
@@ -21,7 +22,7 @@
     <br />
     <mat-dialog-actions align="end">
         <button mat-button mat-dialog-close>Cancel</button>
-        <button class="start-btn " color="primary" mat-button  cdkFocusInitial>Create Folder</button>
+        <button class="start-btn " color="primary" mat-button cdkFocusInitial>OK</button>
     </mat-dialog-actions>
 
 </form>

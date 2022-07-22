@@ -41,7 +41,7 @@ export class SuccessErrorHandlerInterceptor implements HttpInterceptor {
 
       if (response.body.statusCode == 404 || response.body.statusCode == 500 || response.body.statusCode == 0) {
 
-        this.rxjsService.setGlobalLoaderProperty(false);
+        this.rxjsService.setGlobalProgressBarProperty(false);
 
       }
 

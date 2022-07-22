@@ -1,8 +1,13 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { FolderActionType } from '../enums';
+import { ModalArchiveFolderComponent } from '../modules/modal-archive-folder/modal-archive-folder.component';
 import { ModalCreateFolderComponent } from '../modules/modal-create-folder/modal-create-folder.component';
 import { ModalDeleteFolderComponent } from '../modules/modal-delete-folder/modal-delete-folder.component';
 import { ModalInfoFolderComponent } from '../modules/modal-info-folder/modal-info-folder.component';
+import { ModalMoveFolderComponent } from '../modules/modal-move-folder/modal-move-folder.component';
+import { ModalSendFolderComponent } from '../modules/modal-send-folder/modal-send-folder.component';
+import { ModalShareFolderComponent } from '../modules/modal-share-folder/modal-share-folder.component';
 import { ModalUploadComponent } from '../modules/modal-upload/modal-upload.component';
 
 @Injectable({
@@ -24,7 +29,7 @@ export class ModelService {
 
   openCreateFolderDialog() {
     const dialogRef = this.dialog.open(ModalCreateFolderComponent, {
-      width: '40%'
+      width: '30%'
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -44,8 +49,9 @@ export class ModelService {
     });
   }
 
-  openInfoFolderDialog(data:any) {
-    const dialogRef = this.dialog.open(ModalInfoFolderComponent, { data:data,
+  openInfoFolderDialog(data: any) {
+    const dialogRef = this.dialog.open(ModalInfoFolderComponent, {
+      data: data,
       width: '40%'
     });
 
@@ -54,4 +60,58 @@ export class ModelService {
       // this.getDashboardData()
     });
   }
+
+  openArchiveFolderDialog(data: any) {
+    const dialogRef = this.dialog.open(ModalArchiveFolderComponent, {
+      data: data,
+      width: '30%'
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+      // this.getDashboardData()
+    });
+  }
+
+  openMoveFolderDialog(data: any, actionType?: FolderActionType | any) {
+    let type = {
+      actionName: actionType
+    }
+    let datas = { ...type, data }
+    const dialogRef = this.dialog.open(ModalMoveFolderComponent, {
+      data: datas,
+      width: '50%'
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+      // this.getDashboardData()
+    });
+  }
+
+  openSendFolderDialog(data: any) {
+    const dialogRef = this.dialog.open(ModalSendFolderComponent, {
+      data: data,
+      width: '40%'
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+      // this.getDashboardData()
+    });
+  }
+
+  openShareFolderDialog(data: any) {
+    const dialogRef = this.dialog.open(ModalShareFolderComponent, {
+      data: data,
+      width: '80%',
+      // height: '80%'
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+      // this.getDashboardData()
+    });
+  }
+
 }

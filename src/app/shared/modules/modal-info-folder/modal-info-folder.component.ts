@@ -27,7 +27,7 @@ export class ModalInfoFolderComponent implements OnInit {
   getInfo() {
     this.loading = true;
     let otherParams: any = {
-      'filePath': this.data ? this.data?.Key : this.folderName,
+      'filePath': this.data ? this.data?.data?.Key : this.folderName,
     }
     if (this.folderName) {
       // otherParams['fileName'] = this.folderName

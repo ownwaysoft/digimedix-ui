@@ -14,6 +14,11 @@ enum KeyboardEvents {
     KEY_PRESS = 'keyPress'
 }
 
+enum FolderActionType {
+    Move = 'Move',
+    COPY = 'Copy',
+}
+
 enum RestfulMethods {
     POST = 'POST',
     PUT = 'PUT',
@@ -33,7 +38,17 @@ enum ModulesBasedApiSuffix {
     FOLDER_DELETE = 'public/api/file/delete',
     FOLDER_RENAME = 'public/api/file/folder-rename',
     FOLDER_INFO = 'public/api/file/getinfo',
+    FOLDER_DOWNLOAD = 'public/api/file/download',
+    FOLDER_MOVE = 'public/api/file/move',
+    FOLDER_COPY = 'public/api/file/copy',
+    FOLDER_FILE_RENAME = 'public/api/file/file-rename',
+    USER_CREATE = 'public/api/user/create-user',
+    USER_UPDATE = 'public/api/user/update-user',
+    USER_DELETE = 'public/api/user/delete-user',
+    PERMISSION_GET_LIST = 'public/api/permission/getPermissionList',
+    SHARE_DIRECTORY = 'public/api/share/share-directory',
 }
 
 
-export { ResponseMessageTypes, KeyboardEvents, RestfulMethods, ModulesBasedApiSuffix }
+
+export { ResponseMessageTypes, KeyboardEvents, RestfulMethods, ModulesBasedApiSuffix,FolderActionType }

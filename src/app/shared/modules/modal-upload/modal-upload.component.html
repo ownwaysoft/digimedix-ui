@@ -12,7 +12,7 @@
     <section>
       <div class="example--row">
         <label class="file-btn custom-file-upload">
-          <input type="file" (change)="selectFile($event)" />
+          <input type="file" multiple (change)="selectFile($event)" />
           Add Files
       </label>
         <!-- <button class="file-btn" mat-stroked-button>Add Files</button> -->
@@ -25,5 +25,5 @@
 <br />
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancel</button>
-  <button class="start-btn" mat-button [mat-dialog-close]="true" cdkFocusInitial [disabled]="!selectedFiles"  (click)="upload()">Start Upload</button>
+  <button class="start-btn" mat-button color="primary" [mat-dialog-close]="true" cdkFocusInitial [disabled]="!selectedFiles"  (click)="upload()">Start Upload</button>
 </mat-dialog-actions>

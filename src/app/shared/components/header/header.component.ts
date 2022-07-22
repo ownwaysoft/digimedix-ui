@@ -9,7 +9,7 @@ import { RxjsService } from '../../services';
 export class HeaderComponent implements OnInit {
   loading: boolean = false
   constructor(public rxjsServices: RxjsService) {
-    this.rxjsServices.getGlobalLoaderProperty().subscribe(val => {
+    this.rxjsServices.getGlobalProgressBarProperty().subscribe(val => {
       this.loading = val
     })
   }
